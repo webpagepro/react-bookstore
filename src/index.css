@@ -37,6 +37,10 @@ input[type=text]{
   margin-top:5px;
 }
 
+.navbar{
+  margin-top:40px;
+}
+/*
 .leftCol{
   width:33%;
   float:left; height:100%;
@@ -55,7 +59,7 @@ input[type=text]{
 
   
 }
-
+*/
 .columnContainer{
   display:flex;
   flex-direction:columns;

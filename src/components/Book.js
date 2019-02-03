@@ -9,9 +9,9 @@ class Book extends Component {
             <div> 
             <div className="leftCol">
           
-           <tr><Card><td><b>{this.props.book.title}</b></td><td><i>{this.props.book.subtitle}</i></td>
+          <Card><td><b>{this.props.book.title}</b></td><td><i>{this.props.book.subtitle}</i></td>
            <td>{this.props.book.author}</td> <td>{this.props.book.pages}&nbsp;pages</td></Card>
-           <Button onClick={() => this.props.addBookToCart(this.props.book.id)}>Add To Cart {this.props.book.id}</Button></tr>
+           <Button onClick={() => this.props.addBookToCart(this.props.book.id)}>Add To Cart {this.props.book.id}</Button>
 
             
               </div>  
