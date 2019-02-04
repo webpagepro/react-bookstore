@@ -17,18 +17,21 @@ code {
   margin-top:5px;
   margin-bottom:40px;
   border:none;
-  width:400px;
+  width:520px;
   padding:0;
   margin-left:10px;
   padding-bottom:8px;
+  background-color: transparent;
+
 }
 
 button{
-  width:120px;
+  width:23%;
   height:28px;
-  margin-left:70%;
+  margin-left:60%;
   font-weight:400;
   padding-bottom:4px;
+  font-size:10px;
   
 }
 
@@ -38,7 +41,7 @@ input[type=text]{
 }
 
 .navbar{
-  margin-top:40px;
+  margin-top:4px;
 }
 /*
 .leftCol{
@@ -68,4 +71,27 @@ input[type=text]{
 
 .container{
   min-height:100%;
+}
+
+.rightCol{
+  left:100px;
+  width:100%;  
+  background-color: rgb(235, 218, 164);
+
+}
+
+.cart{
+  width:300px;
+}
+
+.remove{
+  width:100px;
+}
+
+.cart-title{
+  font-weight:bold;
+  font-size:24px;
+  margin:0 0 20px 0;
+  position:relative;
+  left:20%;
 }

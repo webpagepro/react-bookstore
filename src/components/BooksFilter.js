@@ -42,7 +42,7 @@ state = {
         <input
           type="text"
           id="standard-name"
-          value={this.state.filter}
+          value={filter}
           onChange={this.handleChange}
           label="Name"
           name="filter"

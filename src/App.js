@@ -71,6 +71,7 @@ removeBookFromCart = id => {
 
   render() {
  
+    
 
    // const filteredBooks = this.state.books.filter(book => book.title.includes(this.state.filter.toLowerCase()))
     
@@ -92,7 +93,7 @@ console.log("libros", this)
       </Col>
       <Col  sm="12" md={{ size: 4, offset: 0}}>
         <Card className="rightCol"> 
-      <BooksCartList books={this.state.books.filter(book => book.inCart == true )} removeBookFromCart={this.removeBookFromCart} /> {/*  */}
+      <BooksCartList books={this.state.books.filter(book => book.inCart == true )} removeBookFromCart={this.removeBookFromCart} booksInCart={this.state.books.filter(book => book.inCart == true )}/> {/*  */}
       </Card> 
       </Col>
         </div>

@@ -21,6 +21,7 @@ class Book extends Component {
                     <i>{this.props.book.subtitle}</i>
                         {this.props.book.author}<br />
                     {this.props.book.publisher}<br />
+                    ${(this.props.book.price).toFixed(2)}<br />
                         <a href={`${this.props.book.website}`}>{this.props.book.website}</a>  
                         {this.props.book.pages}&nbsp;pages<br />
                       
