@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Input } from 'reactstrap'
 const styles = {
@@ -19,12 +19,20 @@ const styles = {
   },
 };
 
-class BooksFilter extends React.Component {
+class BooksFilter extends Component {
+
+state = {
+    filter: ""
+}
+
   handleChange = e => {
-    this.props.setFilter(e.target.value)
-  console.log("handleChange", this.setFilter)
-  }
   
+        let { name, value } = e.target
+        this.setState({
+            [name]: value
+   } )
+}
+
   render() {
 
 
@@ -34,7 +42,7 @@ class BooksFilter extends React.Component {
         <input
           type="text"
           id="standard-name"
-          value={filter}
+          value={this.state.filter}
           onChange={this.handleChange}
           label="Name"
           name="filter"
@@ -42,13 +50,13 @@ class BooksFilter extends React.Component {
         />
       </form>
     );
-  }
+    }
 }
 
 
-BooksFilter.propTypes = {
-    classes: PropTypes.object.isRequired,
-  };
+//BooksFilter.propTypes = {
+   // classes: PropTypes.object.isRequired,
+  //};
   
  
   export default BooksFilter

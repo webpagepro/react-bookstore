@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {Card} from 'reactstrap'
-import BookCart from './Book'
+import BookCart from './BookCart'
 
-const Books = props => {
-    let cartedBooksList = props.books.map(cbook => <BookCart key={cbook.id} book={cbook} />)
+const BooksCartList = props => {
+    let cartedBooksList = props.books.map(book => <BookCart key={book.id} book={book} removeBookFromCart={props.removeBookFromCart}  />)
     console.log("Books ", props)
 
 return(
@@ -16,4 +16,4 @@ return(
 )
 }
 
-export default Books
+export default BooksCartList

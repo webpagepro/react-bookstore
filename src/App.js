@@ -13,7 +13,7 @@ class App extends Component {
 
   state = {
     books: [],
-    filter: '', 
+    filter: "", 
     isLoading: true,
     error: false
    }
@@ -48,7 +48,7 @@ class App extends Component {
 
 
 addBookToCart = id => {
-  axios.patch(`http://books/cart/add/${id}`)
+  axios.patch(`http://localhost:8000/books/cart/add/${id}`)
 .then(res => {
   let otherBooks = this.state.books
  this.setState({
@@ -57,10 +57,11 @@ addBookToCart = id => {
 }
 
 removeBookFromCart = id => {
-  axios.patch(`http://books/cart/remove/${id}`)
+  axios.patch(`http://localhost:8000/books/cart/remove/${id}`)
 .then(res => {
   let otherBooks = this.state.books
-  console.log("otherBooks", otherBooks)
+  console.log("otherBooks res.data", res.data)
+
  this.setState({
 
   books: [...otherBooks.filter(book => book.id !== id), res.data]})
@@ -71,8 +72,10 @@ removeBookFromCart = id => {
   render() {
  
 
-    const filteredBooks = this.state.books.filter(book => book.title.includes(this.state.filter.toLowerCase()))
-    console.log("filteredBooks", filteredBooks)
+   // const filteredBooks = this.state.books.filter(book => book.title.includes(this.state.filter.toLowerCase()))
+    
+
+console.log("libros", this)
 
     return (
       <div className="App">
@@ -80,16 +83,16 @@ removeBookFromCart = id => {
       <TopNavBar/>
       
         <Header className="App-header"/>
-       <BooksFilter setFilter={this.setFilter} />
+       <BooksFilter setFilter={this.setFilter} /> {/**/}
        <div className="columnContainer">
-       <Col sm="6" md={{ size: 6, offset: 0}}>
+       <Col sm="12" md={{ size: 6, offset: 0}}>
        
-        {this.state.isLoading ? 'Loading....  5 seconds timeout function running' :  <Books books={this.state.books.filter(book => book.inCart == false )} filteredBooks={filteredBooks} setFilter={this.setFilter} addBookToCart={this.addBookToCart} />}
+        {this.state.isLoading ? 'Loading....  5 seconds timeout function running' :  <Books books={this.state.books.filter(book => book.inCart == false )} addBookToCart={this.addBookToCart} />}
       
       </Col>
       <Col  sm="12" md={{ size: 4, offset: 0}}>
         <Card className="rightCol"> 
-        {!this.state.books ? 'No books in cart' :  <BooksCartList books={this.state.books.filter(book => book.inCart == true )} filteredBooks={filteredBooks} setFilter={this.setFilter} removeBookFromCart={this.removeBookFromCart} />}
+      <BooksCartList books={this.state.books.filter(book => book.inCart == true )} removeBookFromCart={this.removeBookFromCart} /> {/*  */}
       </Card> 
       </Col>
         </div>
