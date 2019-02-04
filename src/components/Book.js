@@ -21,7 +21,7 @@ class Book extends Component {
                     <i>{this.props.book.subtitle}</i>
                         {this.props.book.author}<br />
                     {this.props.book.publisher}<br />
-                        <a href={`${this.props.book.website}`}>{this.props.book.website}</a>}   
+                        <a href={`${this.props.book.website}`}>{this.props.book.website}</a>  
                         {this.props.book.pages}&nbsp;pages<br />
                       
                     <Button onClick={() => this.props.addBookToCart(this.props.book.id)}>Add To Cart {this.props.book.id}</Button> </Card>
