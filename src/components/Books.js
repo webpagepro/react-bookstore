@@ -19,12 +19,19 @@ console.log("BooksFilter ", name, value)
 
 render(){
 
-    let booksList = this.props.books
+   /* let booksList = this.props.books
     .filter(book => book.title.includes(this.state.filtered))
     .map(book => <Book key={book.id} book={book}
         addBookToCart={this.props.addBookToCart}
         books={this.props.books}
 />)
+*/
+
+let booksList = this.props.books
+    .filter(book => book.author.includes(this.state.filtered) || book.title.includes(this.state.filtered) )
+    .map(book => <Book key={book.id} book={book}
+       addBookToCart={this.props.addBookToCart}
+      />)
 
     return (
         <div>
