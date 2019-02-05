@@ -37,7 +37,7 @@ render(){
                 label="Name"
                 name="filtered"
                 margin="normal"
-                placeholder="Search books using books title capitalization eg: Book Title"
+                placeholder="Search books using Book Title capitalization eg: Book Title"
             />
             {booksList}
      </p>  

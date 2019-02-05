@@ -15,7 +15,7 @@ state={
 
         return (
 
-            <div>
+            
                 <div className="leftCol">
 
                     <Card><b>{this.props.book.title}</b>
@@ -28,8 +28,7 @@ state={
 
                         <Button onClick={() => this.props.addBookToCart(this.props.book.id)} >Add To Cart {this.props.book.id}</Button> </Card>
                 </div>
-            </div>
-        );
+            );
     }
 }
 

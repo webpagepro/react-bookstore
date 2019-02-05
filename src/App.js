@@ -63,21 +63,15 @@ class App extends Component {
     axios.patch(`http://localhost:8000/books/cart/remove/${id}`)
       .then(res => {
         let otherBooks = this.state.books
-        console.log("otherBooks res.data", res.data)
 
         this.setState({
-          books: [...otherBooks.filter(book => book.id !== id), res.data]
+          books: [...otherBooks.filter(book => book.id !== id), ...res.data]
         })
       })
   }
 
 
   render() {
-
-  this.books = this.state.books.filter(book => book.inCart !== true)
-
-   
-
 
     return (
       <div className="App">
@@ -88,7 +82,7 @@ class App extends Component {
           <div className="columnContainer">
             <Col sm="12" md={{ size: 6, offset: 0 }}>
 
-              {this.state.isLoading ? 'Loading....  5 seconds timeout function running' : <Books books={this.state.books.filter(book => book.inCart === false)} addBookToCart={this.addBookToCart} />}
+              {this.state.isLoading ? 'Loading....  5 seconds timeout function running' : <Books books={this.state.books.filter(book => book.inCart != true)} addBookToCart={this.addBookToCart} />}
 
             </Col>
             <Col sm="12" md={{ size: 4, offset: 0 }}>

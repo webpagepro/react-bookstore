@@ -6,10 +6,11 @@ class Footer extends Component {
      render(){
        console.log('Footer ', this )
                 return(
+                  <div>
 <nav className="navbar navbar-dark bg-dark">
-  <a className="navbar-brand" href="#">&copy;{this.props.copy}</a>
 </nav>
-                )
+            </div>  
+              )
 
      }     
 
