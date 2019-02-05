@@ -7,30 +7,28 @@ class Books extends Component {
         filtered: ""
     }
     
+    
 handleChange = e => {
   
     let { name, value } = e.target
     this.setState({
         [name]: value
-} )
+    })
+console.log("BooksFilter ", name, value)
 }
 
-//filteredByAuthor = this.state.books.filter(book => book.author.includes(this.state.filter.toLowerCase()))
-//filteredByTitle = this.state.books.filter(book => book.title.includes(this.state.filter.toLowerCase()))
-
 render(){
- //const 
-    //const 
+
     let booksList = this.props.books
     .filter(book => book.title.includes(this.state.filtered))
     .map(book => <Book key={book.id} book={book}
         addBookToCart={this.props.addBookToCart}
         books={this.props.books}
-    />)
+/>)
 
     return (
         <div>
-
+<p>
             <input
                 type="text"
                 id="standard-name"
@@ -39,10 +37,11 @@ render(){
                 label="Name"
                 name="filtered"
                 margin="normal"
+                placeholder="Search books using books title capitalization eg: Book Title"
             />
             {booksList}
-        </div>
-
+     </p>  
+</div>
     )
 }
 }
