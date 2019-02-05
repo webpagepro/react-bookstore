@@ -22,7 +22,7 @@ const styles = {
 class BooksFilter extends Component {
 
 state = {
-    filter: ""
+    filtered: "",
 }
 
   handleChange = e => {
@@ -31,21 +31,23 @@ state = {
         this.setState({
             [name]: value
    } )
+   console.log("BooksFilter ", name, value)
 }
 
   render() {
 
+    console.log('BooksFilter total', this.handleChange)
 
-    const { filter } = this.props;
+    const { filtered } = this.props;
     return (
       <form>
         <input
           type="text"
           id="standard-name"
-          value={filter}
+          value={filtered}
           onChange={this.handleChange}
           label="Name"
-          name="filter"
+          name="filtered"
           margin="normal"
         />
       </form>
